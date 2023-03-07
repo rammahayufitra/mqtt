@@ -36,6 +36,7 @@ try:
         }
         data = json.dumps(dictionary)
         print(data)
+        print("client")
 
         _, buffer = cv2.imencode('.jpg', frame)
         jpg_as_text = base64.b64encode(buffer)

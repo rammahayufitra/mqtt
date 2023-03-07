@@ -27,6 +27,7 @@ def on_connect2(client,userdata, flags, rc):
     client.subscribe(MQTT_RECEIVE2)
 
 def on_message2(client,userdata, msg):
+    print("server")
     print(msg.payload.decode())
     
 client1 = mqtt.Client()
@@ -43,7 +44,7 @@ client1.loop_start()
 client2.loop_start()
 
 while True:
-    cv2.imshow("from client", frame)
+    cv2.imshow("frame MQTT from client", frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break 
 
